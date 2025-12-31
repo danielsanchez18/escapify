@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+
+@font-face {
+  font-family: 'Eloquia Display';
+  src: url('/fonts/Typekiln - EloquiaDisplay-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eloquia Text';
+  src: url('/fonts/Typekiln - EloquiaText-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@custom-variant hover (&:hover);
+
+
+@theme {
+
+  --font-primary: "Inter", sans-serif;
+  --color-primary: #51965c;
+
+  --font-eloquia-display: "Eloquia Display", sans-serif;
+  --font-eloquia-text: "Eloquia Text", sans-serif;
+
+}
+
+* {
+  @apply [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar]:h-2
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-thumb]:bg-gray-300;
+}
+
+:root {
+  @apply font-primary;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.30s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.30s ease-in forwards;
+}

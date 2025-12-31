@@ -1,0 +1,46 @@
+<!-- Start Cad Section -->
+<section class="py-20">
+  <div class="max-w-7xl px-5 lg:px-10 mx-auto w-full space-y-10">
+
+    <!-- Title & Description -->
+    <div class="max-w-3xl mx-auto text-center space-y-3">
+      <h2 class="font-semibold text-3xl lg:text-4xl text-balance">Un <span class="text-primary">ecosistema</span> modular y flexible</h2>
+      <p class="text-gray-800">
+        Activa solo los módulos que necesitas y escala cuando lo requieras.
+      </p>
+    </div>
+
+    <!-- Components -->
+    <div
+      *ngFor="let category of categories"
+      class="space-y-5">
+
+      <!-- Title -->
+      <h3 class="font-semibold text-lg">{{ category.name }}</h3>
+
+      <!-- Grid Components -->
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Component -->
+        <a
+          *ngFor="let component of category.components"
+          [routerLink]="[component.url]"
+          class="w-full border border-gray-200 rounded-2xl outline outline-transparent hover:border-primary hover:outline-primary hover:shadow-lg transition duration-300 overflow-hidden">
+
+          <!-- Image -->
+          <!-- <div class="h-40 bg-gray-100"> -->
+          <div class="pt-[50%] bg-gray-100">
+          </div>
+
+          <!-- Title & Description -->
+          <div class="px-5 py-4">
+            <h4 class="font-semibold">{{ component.name }}</h4>
+            <p class="text-sm text-gray-700">{{ component.nroElements }} components</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Cad Section -->

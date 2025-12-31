@@ -1,0 +1,21 @@
+import { Routes } from "@angular/router";
+import { LayoutLanding } from "./landing";
+import { PageLandingHome } from "@pages/landing/home/home";
+
+export const LANDING_ROUTES: Routes = [
+  {
+    path: '',
+    component: LayoutLanding,
+    children: [
+      { path: '', component: PageLandingHome},
+      // { path: 'servicios',    component: PageCustomerServices  },
+    //   { path: 'precios',      component: PageCustomerPrices    },
+    //   { path: 'clientes',     component: PageCustomerClients   },
+    //   { path: 'demo',         component: PageCustomerDemo      },
+    //   { path: 'afiliados',    component: PageCustomerPartnerts },
+    //   { path: 'contactanos',  component: PageCustomerContacts  },
+    //   { path: 'politicas',    component: PageCustomerPolicies  },
+    //   { path: 'reportar-actividad', component: PageCustomerReport  }
+    ]
+  }
+];
