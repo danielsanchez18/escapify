@@ -1,51 +1,91 @@
-<section class="w-full fixed top-4 left-0 z-50 mx-5 lg:mx-10">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between rounded-full bg-white backdrop-blur-3xl">
+<section class="w-full">
+  <nav class="flex items-center gap-x-10 max-w-7xl mx-auto px-5 py-4 lg:px-10">
 
-    <!-- Logo -->
-    <a href="/"
-      class="h-9">
-      <img src="/logos/logo.png" alt="Logo" class="h-9 w-auto">
-    </a>
+    <!-- Start Logo -->
+    <div class="flex items-center gap-x-3">
+      <!-- Button Menu -->
+      <button class="md:hidden rounded-full flex items-center justify-center hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu size-4.5">
+          <path d="M4 5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 19h16" />
+        </svg>
+      </button>
 
-    <!-- Navigation Links -->
-    <div class="flex items-center gap-x-8 max-md:hidden">
-      <a routerLink="/"
-        routerLinkActive="underline font-semibold pointer-events-none"
-        class="text-sm underline-offset-2 hover:underline">
+      <a href="" class="py-2 h-10">
+        <img src="/logos/logo.png" alt="Logo" class="w-full h-full object-cover">
+      </a>
+    </div>
+    <!-- End Logo -->
+
+    <!-- Start Menu -->
+    <div class="hidden lg:flex items-center gap-x-7">
+      <a routerLink="/" routerLinkActive="text-primary underline font-semibold"
+        [routerLinkActiveOptions]="{ exact: true }" class="text-sm hover:underline">
         Inicio
       </a>
-
-      <a routerLink="/servicios"
-        class="text-sm underline-offset-2 hover:underline">
+      <a routerLink="/servicios" routerLinkActive="text-primary underline font-semibold" class="text-sm hover:underline">
         Servicios
       </a>
-
-      <a routerLink="/planes"
-        class="text-sm underline-offset-2 hover:underline">
+      <a routerLink="/planes" routerLinkActive="text-primary underline font-semibold" class="text-sm hover:underline">
         Planes
       </a>
-
-      <a routerLink="/clientes"
-        class="text-sm underline-offset-2 hover:underline">
+      <a routerLink="/clientes" routerLinkActive="text-primary underline font-semibold"
+        class="text-sm hover:underline">
         Clientes
       </a>
-
-      <a routerLink="/blog"
-        class="text-sm underline-offset-2 hover:underline">
+      <a routerLink="/blog" routerLinkActive="text-primary underline font-semibold"
+        class="text-sm hover:underline">
         Blog
       </a>
-
     </div>
+    <!-- End Menu -->
 
-    <!-- User Actions -->
-    <div class="flex items-center gap-x-2">
-      <a routerLink="/auth/ingresar"
-        class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:">
-        Ingresar
-      </a>
+    <!-- Start Buttons -->
+    <div class="ml-auto flex items-center">
 
+      <!-- Button Search -->
+      <button class="rounded-full flex items-center justify-center h-10 w-10 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-search-icon lucide-search size-4.5 stroke-[1.5]">
+          <path d="m21 21-4.34-4.34" />
+          <circle cx="11" cy="11" r="8" />
+        </svg>
+      </button>
+
+      <!-- Button Notifications -->
+        <!-- <button class="rounded-full flex items-center justify-center h-10 w-10 hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-bell-icon lucide-bell size-4.5 stroke-[1.5]">
+            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+            <path
+              d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+          </svg>
+        </button> -->
+
+      <!-- Button Avatar -->
+      <!-- <button class="rounded-full flex items-center justify-center h-10 w-10 bg-gray-200 ml-2">
+      </button> -->
+
+      <!-- Button Ingresar -->
+      <button routerLink="/auth/ingresar" class="sm:hidden btn-primary-sm">
+        <p>Ingresar</p>
+      </button>
+
+      <!-- Button Secondary -->
+      <button routerLink="/auth/ingresar" class="hidden sm:flex btn-secondary-sm mx-2">
+        <p>Iniciar Sesión</p>
+      </button>
+
+      <!-- Button Principal -->
+      <button routerLink="/auth/registrar" class="hidden sm:flex btn-primary-sm">
+        <p>Únete ahora</p>
+      </button>
     </div>
-
+    <!-- End Buttons -->
   </nav>
-
 </section>

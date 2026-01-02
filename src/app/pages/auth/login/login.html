@@ -1,15 +1,16 @@
-<section class="grid lg:grid-cols-2 h-screen min-h-[50rem] max-w-7xl mx-auto">
+<section class="grid lg:grid-cols-2 min-h-[50rem] max-w-7xl mx-auto">
+
+  <!-- Image Section -->
+  <div class="hidden lg:flex items-center justify-center p-10 w-full">
+    <img src="/images/image-login.png" alt="" class="">
+  </div>
 
   <!-- Form Section -->
-  <div class="w-full flex items-center px-5 lg:px-0 py-20">
-    <div class="max-w-md w-full mx-auto space-y-14">
+  <div class="w-full flex items-center justify-center px-5 lg:px-0 py-20">
+    <div class="max-w-md mx-auto space-y-14">
 
       <!-- Title -->
-      <div class="text-center space-y-2">
-        <img src="/logos/logo.png" alt="Logo" class="h-12 mb-10 w-auto mx-auto lg:hidden">
-        <h2 class="font-semibold text-3xl text-center text-balance">¡Bienvenido de nuevo!</h2>
-        <p class="text-gray-800 max-md:text-sm">Inicia sesión para continuar con tu experiencia completa</p>
-      </div>
+      <h2 class="font-semibold text-3xl text-center text-balance">Inicia sesión para continuar con la experiencia completa</h2>
       <!-- End Title -->
 
       <!-- Form -->
@@ -89,15 +90,18 @@
 
         <!-- Forgot Password -->
         <div class="ml-auto w-fit">
-          <a href="#" class="text-primary font-medium hover:underline">¿Olvidaste tu contraseña?</a>
+          <a href="#" class="text-primary hover:underline">¿Olvidaste tu contraseña?</a>
         </div>
 
         <!-- Submit Button -->
-        <button
-          type="button"
-          class="w-full bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-6 py-3 transition duration-300">
-          Iniciar sesión
-        </button>
+        <div>
+          <button
+            type="button"
+            class="w-full btn-primary !py-4"
+            aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-scale-animation-modal" data-hs-overlay="#hs-scale-animation-modal">
+            Continuar
+          </button>
+        </div>
 
       </form>
       <!-- End Form -->
@@ -128,19 +132,62 @@
       <!-- End Login with Google or Facebook  -->
 
       <!-- Sign up -->
-      <div class="flex items-center justify-center gap-x-2 max-md:text-sm mt-10">
-        <p class="text-gray-800 ">¿No tienes una cuenta?</p>
-        <a href="/registrarse" class="text-primary font-medium hover:underline">Únete ahora.</a>
+      <div class="flex items-center justify-center gap-x-2 max-md:text-sm my-10">
+        <p class="text-gray-600 ">¿No tienes una cuenta?</p>
+        <a href="/auth/registrar" class="text-primary hover:underline">Únete ahora.</a>
       </div>
       <!-- End Sign up -->
     </div>
   </div>
 
-
-  <!-- Image Section -->
-  <div class="hidden lg:flex items-center justify-center w-full">
-    <img src="/images/image-login.png" alt="" class="max-h-[35rem]">
-  </div>
-
 </section>
 
+<!-- Modal Code Login -->
+<div id="hs-scale-animation-modal" class="hs-overlay [--overlay-backdrop:static] hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-label">
+  <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+    <div class="w-full flex flex-col gap-y-10 bg-white border border-gray-200 shadow-2xs rounded-2xl pointer-events-auto px-5 py-10">
+
+      <!-- Title -->
+      <div class="text-center space-y-5">
+        <h2 class="text-xl text-balance font-semibold">Comprueba tu bandeja de entrada</h2>
+        <p class="text-sm text-balance text-gray-600">Introduce el código de 6 dígitos que hemos enviado a
+          <span class="text-primary font-semibold">dsanchez151r&#64;gmail.com</span>
+          para completar el inicio de sesión.
+        </p>
+      </div>
+
+      <!-- Input Code -->
+      <div class="flex items-center justify-center gap-x-3" data-hs-pin-input="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="" autofocus="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="">
+        <input type="text" class="block w-9.5 sm:w-10 sm:text-lg text-center border-gray-300 rounded-md focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none" data-hs-pin-input-item="">
+      </div>
+
+      <!-- Error Message -->
+      <!-- <div>
+        <p class="text-center text-sm text-red-600">El código no es correcto. Vuelve a intentarlo.</p>
+      </div> -->
+
+      <!-- Buttons -->
+      <div class="grid sm:grid-cols-2 gap-y-3 gap-x-3">
+        <button type="button"
+          class="btn-secondary-rounded w-full">
+          Reenviar en 29s
+        </button>
+        <button type="button"
+          class="btn-primary-rounded w-full"
+          data-hs-overlay="#hs-scale-animation-modal" aria-controls="hs-scale-animation-modal" aria-haspopup="dialog" aria-expanded="true">
+          Verificar
+        </button>
+        <button class="sm:col-span-2 mt-4 text-sm text-gray-600 hover:underline hover:text-black mx-auto"
+          data-hs-overlay="#hs-scale-animation-modal" aria-controls="hs-scale-animation-modal" aria-haspopup="dialog" aria-expanded="true">
+          Iniciar sesión en una cuenta diferente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Code Login -->

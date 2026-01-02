@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "../node_modules/preline/variants.css";
+
+@source "../node_modules/preline/dist/*.js";
 
 @plugin "@tailwindcss/forms";
 
@@ -29,7 +32,10 @@
 @theme {
 
   --font-primary: "Inter", sans-serif;
+
   --color-primary: #51965c;
+  --color-primary-light: #75b37f;
+  --color-primary-dark: #396f42;
 
   --font-eloquia-display: "Eloquia Display", sans-serif;
   --font-eloquia-text: "Eloquia Text", sans-serif;
@@ -82,3 +88,21 @@
 .animate-slideUp {
   animation: slideUp 0.30s ease-in forwards;
 }
+
+.btn-primary {
+  @apply text-nowrap font-semibold rounded-full px-3 py-2 text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark;
+}
+
+.btn-secondary {
+  @apply text-nowrap bg-white text-primary font-semibold rounded-full px-3 py-2 border border-primary hover:bg-gray-50 focus:outline-none focus:ring focus:ring-primary-dark;
+}
+
+
+.btn-primary-sm {
+  @apply text-nowrap text-sm font-semibold rounded-full px-3 py-2 text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark;
+}
+
+.btn-secondary-sm {
+  @apply text-nowrap bg-white text-primary text-sm font-semibold rounded-full px-3 py-2 border border-primary hover:bg-gray-50 focus:outline-none focus:ring focus:ring-primary-dark;
+}
+

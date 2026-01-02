@@ -7,6 +7,7 @@ import { ComponentLandingHomeAbout } from '@components/landing/home/about/about'
 import { ComponentLandingHomeClients } from '@components/landing/home/clients/clients';
 import { ComponentLandingHomeQuestions } from '@components/landing/home/questions/questions';
 import { ComponentLandingHomeStats } from "@components/landing/home/stats/stats";
+import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
 
 @Component({
   selector: 'page-landing-home',
@@ -18,7 +19,8 @@ import { ComponentLandingHomeStats } from "@components/landing/home/stats/stats"
     ComponentLandingHomeClients,
     ComponentLandingHomeRating,
     ComponentLandingHomeQuestions,
-    ComponentLandingHomeStats
+    ComponentLandingHomeStats,
+    ComponentLandingSharedCta,
 ],
   templateUrl: './home.html',
 })

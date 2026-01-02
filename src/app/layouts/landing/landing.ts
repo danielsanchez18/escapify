@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
 import { ComponentLandingSharedFooter } from '@components/landing/shared/footer/footer';
 import { ComponentLandingSharedNavbar } from '@components/landing/shared/navbar/navbar';
 
@@ -9,7 +8,6 @@ import { ComponentLandingSharedNavbar } from '@components/landing/shared/navbar/
   imports: [
     RouterOutlet,
     ComponentLandingSharedNavbar,
-    ComponentLandingSharedCta,
     ComponentLandingSharedFooter,
 ],
   templateUrl: './landing.html',
