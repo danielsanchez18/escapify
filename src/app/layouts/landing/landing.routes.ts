@@ -10,14 +10,14 @@ export const LANDING_ROUTES: Routes = [
     component: LayoutLanding,
     children: [
       { path: '', component: PageLandingHome },
-      {
-        path: 'auth',
-        children: [
-          { path: 'ingresar', component: PageAuthLogin },
-          { path: 'registrar', component: PageAuthSignup },
-        ]
-      },
-      // { path: 'servicios',    component: PageCustomerServices  },
+      // {
+      //   path: 'auth',
+      //   children: [
+      //     { path: 'ingresar', component: PageAuthLogin },
+      //     { path: 'registrar', component: PageAuthSignup },
+      //   ]
+      // },
+    // { path: 'servicios',    component: PageCustomerServices  },
     //   { path: 'precios',      component: PageCustomerPrices    },
     //   { path: 'clientes',     component: PageCustomerClients   },
     //   { path: 'demo',         component: PageCustomerDemo      },
