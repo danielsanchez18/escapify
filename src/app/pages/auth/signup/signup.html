@@ -25,12 +25,12 @@
             formControlName="name"
             placeholder=" "
             required
-            class="peer w-full border border-gray-300 rounded-full px-10 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+            class="peer w-full border border-gray-300 rounded-full px-8 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
           >
 
           <label
             for="name"
-            class="absolute left-8 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
                   peer-placeholder-shown:top-1/2
                   peer-placeholder-shown:text-base
                   peer-[:not(:placeholder-shown)]:-top-1
@@ -55,12 +55,12 @@
             formControlName="lastname"
             placeholder=" "
             required
-            class="peer w-full border border-gray-300 rounded-full px-10 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+            class="peer w-full border border-gray-300 rounded-full px-8 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
           >
 
           <label
             for="lastname"
-            class="absolute left-8 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
                   peer-placeholder-shown:top-1/2
                   peer-placeholder-shown:text-base
                   peer-[:not(:placeholder-shown)]:-top-1
@@ -76,6 +76,36 @@
           </label>
         </div>
 
+        <!-- PhoneNumber -->
+        <div class="relative w-full md:col-span-2">
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            formControlName="phoneNumber"
+            placeholder=" "
+            required
+            class="peer w-full border border-gray-300 rounded-full px-8 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+
+          <label
+            for="phoneNumber"
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
+                  peer-placeholder-shown:top-1/2
+                  peer-placeholder-shown:text-base
+                  peer-[:not(:placeholder-shown)]:-top-1
+                  peer-[:not(:placeholder-shown)]:text-sm
+                  peer-[:not(:placeholder-shown)]:
+                  peer-focus:-top-1
+                  peer-focus:text-sm
+                  peer-focus:text-primary
+                  peer-focus:font-medium
+                  bg-white pointer-events-none px-2"
+          >
+            Número de teléfono
+          </label>
+        </div>
+
         <!-- Email -->
         <div class="relative w-full md:col-span-2">
           <input
@@ -85,12 +115,12 @@
             formControlName="email"
             placeholder=" "
             required
-            class="peer w-full border border-gray-300 rounded-full px-10 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+            class="peer w-full border border-gray-300 rounded-full px-8 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
           >
 
           <label
             for="email"
-            class="absolute left-8 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
                   peer-placeholder-shown:top-1/2
                   peer-placeholder-shown:text-base
                   peer-[:not(:placeholder-shown)]:-top-1
@@ -115,12 +145,12 @@
             formControlName="password"
             placeholder=" "
             required
-            class="peer w-full border border-gray-300 rounded-full px-10 pr-12 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+            class="peer w-full border border-gray-300 rounded-full px-8 pr-14 py-4 placeholder-transparent hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
           >
 
           <label
             for="password"
-            class="absolute left-8 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200
                   peer-placeholder-shown:top-1/2
                   peer-placeholder-shown:text-base
                   peer-[:not(:placeholder-shown)]:-top-1
@@ -180,7 +210,7 @@
       <div class="grid md:grid-cols-2 gap-x-3 gap-y-3 w-full mx-auto">
         <div class="flex items-center gap-x-5 md:col-span-2 pb-2">
           <div class="h-px bg-gray-300 flex-1"></div>
-          <p class="text-center text-gray-600 font-medium text-sm text-nowrap">Otros métodos de registro</p>
+          <p class="text-center text-gray-800 font-medium text-sm text-nowrap">Otros métodos de registro</p>
           <div class="h-px bg-gray-300 flex-1"></div>
         </div>
 
@@ -202,7 +232,7 @@
 
       <!-- Sign up -->
       <div class="flex items-center justify-center gap-x-2 max-md:text-sm my-10">
-        <p class="text-gray-600 ">Ya tienes una cuenta?</p>
+        <p class="text-gray-800 ">Ya tienes una cuenta?</p>
         <a href="/auth/ingresar" class="text-primary hover:underline">Iniciar sesión.</a>
       </div>
       <!-- End Sign up -->
@@ -219,7 +249,7 @@
       <!-- Title -->
       <div class="text-center space-y-5">
         <h2 class="text-xl text-balance font-semibold">Comprueba tu bandeja de entrada</h2>
-        <p class="text-sm text-balance text-gray-600">Introduce el código de 6 dígitos que hemos enviado a
+        <p class="text-sm text-balance text-gray-800">Introduce el código de 6 dígitos que hemos enviado a
           <span class="text-primary font-semibold">dsanchez151r&#64;gmail.com</span>
           para completar el registro.
         </p>
@@ -243,11 +273,11 @@
       <!-- Buttons -->
       <div class="grid sm:grid-cols-2 gap-y-3 gap-x-3">
         <button type="button"
-          class="btn-secondary-rounded w-full">
+          class="btn-secondary w-full">
           Reenviar en 29s
         </button>
         <button type="button"
-          class="btn-primary-rounded w-full"
+          class="btn-primary w-full"
           data-hs-overlay="#hs-scale-animation-modal" aria-controls="hs-scale-animation-modal" aria-haspopup="dialog" aria-expanded="true">
           Verificar
         </button>
