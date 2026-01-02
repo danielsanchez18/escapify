@@ -33,6 +33,24 @@ export class ComponentLandingHomeModules {
           nroElements: 8,
           url: '/docs/accordion',
           img: '/img/img-components/accordion-component.png',
+        },
+        {
+          name: 'Accordion',
+          nroElements: 8,
+          url: '/docs/accordion',
+          img: '/img/img-components/accordion-component.png',
+        },
+        {
+          name: 'Accordion',
+          nroElements: 8,
+          url: '/docs/accordion',
+          img: '/img/img-components/accordion-component.png',
+        },
+        {
+          name: 'Accordion',
+          nroElements: 8,
+          url: '/docs/accordion',
+          img: '/img/img-components/accordion-component.png',
         }
       ]
     }
