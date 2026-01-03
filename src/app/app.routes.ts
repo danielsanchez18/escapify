@@ -6,8 +6,17 @@ export const routes: Routes = [
     loadChildren: () => import('./layouts/landing/landing.routes').then(m => m.LANDING_ROUTES),
   },
   {
-    path: 'auth/registrar',
-    loadComponent: () => import('./pages/auth/signup/signup').then(m => m.PageAuthSignup),
+    path: 'auth',
+    children: [
+      {
+        path: 'ingresar',
+        loadComponent: () => import('./pages/auth/login/login').then(m => m.PageAuthLogin),
+      },
+      {
+        path: 'registrar',
+        loadComponent: () => import('./pages/auth/signup/signup').then(m => m.PageAuthSignup),
+      }
+    ]
   },
   {
     path: '**',
