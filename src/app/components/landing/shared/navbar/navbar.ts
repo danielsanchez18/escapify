@@ -6,7 +6,7 @@ import { PageAuthLoginv2 } from '@pages/auth/loginv2/loginv2';
   selector: 'component-landing-shared-navbar',
   imports: [
     RouterModule,
-    PageAuthLoginv2
+    PageAuthLoginv2,
 ],
   templateUrl: './navbar.html',
 })
