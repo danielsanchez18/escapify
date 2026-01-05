@@ -19,6 +19,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: '',
+    loadChildren: () => import('./layouts/user/user.routes').then(m => m.USER_ROUTES),
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
