@@ -6,7 +6,7 @@ import { ComponentLandingHomeFeatures } from '@components/landing/home/features/
 import { ComponentLandingHomeAbout } from '@components/landing/home/about/about';
 import { ComponentLandingHomeClients } from '@components/landing/home/clients/clients';
 import { ComponentLandingHomeQuestions } from '@components/landing/home/questions/questions';
-import { ComponentLandingHomeStats } from "@components/landing/home/stats/stats";
+import { ComponentLandingSharedStats } from "@components/landing/shared/stats/stats";
 import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
 
 @Component({
@@ -19,7 +19,7 @@ import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
     ComponentLandingHomeClients,
     ComponentLandingHomeRating,
     ComponentLandingHomeQuestions,
-    ComponentLandingHomeStats,
+    ComponentLandingSharedStats,
     ComponentLandingSharedCta,
 ],
   templateUrl: './home.html',
