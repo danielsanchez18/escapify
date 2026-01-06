@@ -1,0 +1,95 @@
+<section class="">
+
+  <!-- Options Bar -->
+  <div class="flex items-center">
+
+    <div class="pr-4 border-r border-black">
+      <p class="text-sm">1 Empresa</p>
+    </div>
+
+    <button class="px-2 ml-2 py-2 rounded-lg flex items-center gap-x-1.5 hover:bg-gray-200">
+      <lucide-icon [name]="ArrowDownUp" class="size-4" />
+      <p class="text-sm">Recientes</p>
+      <lucide-icon [name]="ChevronDown" class="size-4" />
+    </button>
+
+    <button
+      class="text-sm ml-auto px-2.5 py-2 rounded-lg bg-primary text-white font-semibold flex items-center gap-x-1.5 hover:bg-primary-dark"
+      type="button"
+      data-hs-overlay="#add-company-modal" aria-controls="add-company-modal" aria-haspopup="dialog" aria-expanded="true"
+    >
+      <lucide-icon [name]="Plus" class="size-4" />
+      <p>Crear</p>
+    </button>
+
+  </div>
+
+  <!-- Companies List -->
+  <div class="overflow-x-hidden hover:overflow-x-auto sm:mx-5">
+    <div class="min-w-full inline-block align-middle">
+      <div class="overflow-hidden h-[25.5rem]">
+        <!-- Empty content -->
+        <div *ngIf="companies.length === 0" class="flex flex-col items-center justify-center w-full h-full">
+          <img src="/images/empty.png" alt="Empty content" class="h-22 mask-b-from-40% mb-5">
+          <p class="font-medium mb-2">Sin datos</p>
+          <p class="text-sm text-gray-500 text-center">Aún no hay datos disponibles. <br> Le avisaremos cuando haya alguna actualización.</p>
+        </div>
+        <!-- Table content -->
+        <table *ngIf="companies.length > 0" class="min-w-full divide-y divide-white">
+          <thead>
+            <tr class="text-xs uppercase bg-gray-100">
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">empresa</th>
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">Suscripcion</th>
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">n° sucur.</th>
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">n° trabaj.</th>
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">Ventas</th>
+              <th scope="col" class="px-6 py-3 text-nowrap font-semibold text-start">creado por</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr *ngFor="let company of companies" routerLink="{{ company.id }}"
+              class="group hover:bg-gray-50 hover:cursor-pointer max-xl:w-full">
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                <div class="grid grid-cols-[auto_1fr] gap-x-2 items-center">
+                  <img *ngIf="company.logoUrl && company.id && logoMap[company.id]" [src]="logoMap[company.id]"
+                    alt="{{ company.name }} logo" class="min-w-10 max-w-10 h-10 bg-gray-100 rounded-full object-cover">
+                  <div class="grid grid-cols-[auto_1fr] gap-x-2 items-center">
+                    <p class="text-gray-800 font-semibold group-hover:text-primary group-hover:underline">{{ company.name }}</p>
+                    <lucide-icon *ngIf="company.enabled && !company.deleted" [name]="CircleCheck" class="size-4 text-primary" title="Empresa Activa" />
+                    <lucide-icon *ngIf="!company.enabled && !company.deleted" [name]="CircleMinus" class="size-4 text-gray-600" title="Empresa Inactiva" />
+                    <lucide-icon *ngIf="company.deleted" [name]="CircleX" class="size-4 text-red-600" title="Empresa Eliminada" />
+                    <p class="text-gray-500 text-sm col-span-2">{{ company.tag }}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                <div class="">
+                  <p class="text-sm text-gray-900 font-medium">Premium</p>
+                  <p class="text-xs text-gray-600">13 días restantes</p>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ branchCountMap[company.id!] }} sucursales</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">13 trabajadores</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">S/. 1203.00</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                <div class="grid grid-cols-[auto_1fr] gap-x-2 items-center">
+                  <img class="min-w-10 max-w-10 h-10 bg-gray-100 rounded-full object-cover"
+                    [src]="company.audit && company.audit.createdBy && userPhotoMap[company.audit.createdBy] ? userPhotoMap[company.audit.createdBy] : '/img/logo-min.png'"
+                    alt="User Photo" />
+                  <div class="flex flex-col">
+                    <p class="text-gray-800 font-semibold">{{ company.audit && company.audit.createdBy &&
+                      userMap[company.audit.createdBy] ? userMap[company.audit.createdBy].name : 'Desconocido' }} {{
+                      company.audit && company.audit.createdBy && userMap[company.audit.createdBy] ?
+                      userMap[company.audit.createdBy].lastname : '' }}</p>
+                    <p class="text-gray-500 text-sm">{{ company.audit.createdAt | date: 'MMM dd, yyyy' }}</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>
