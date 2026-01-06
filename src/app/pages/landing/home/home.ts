@@ -4,10 +4,10 @@ import { ComponentLandingHomeHero } from '@components/landing/home/hero/hero';
 import { ComponentLandingHomeRating } from '@components/landing/home/rating/rating';
 import { ComponentLandingHomeFeatures } from '@components/landing/home/features/features';
 import { ComponentLandingHomeAbout } from '@components/landing/home/about/about';
-import { ComponentLandingHomeClients } from '@components/landing/home/clients/clients';
-import { ComponentLandingHomeQuestions } from '@components/landing/home/questions/questions';
 import { ComponentLandingSharedStats } from "@components/landing/shared/stats/stats";
 import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
+import { ComponentLandingSharedClients } from '@components/landing/shared/clients/clients';
+import { ComponentLandingSharedQuestions } from '@components/landing/shared/questions/questions';
 
 @Component({
   selector: 'page-landing-home',
@@ -16,9 +16,9 @@ import { ComponentLandingSharedCta } from '@components/landing/shared/cta/cta';
     ComponentLandingHomeAbout,
     ComponentLandingHomeModules,
     ComponentLandingHomeFeatures,
-    ComponentLandingHomeClients,
+    ComponentLandingSharedClients,
     ComponentLandingHomeRating,
-    ComponentLandingHomeQuestions,
+    ComponentLandingSharedQuestions,
     ComponentLandingSharedStats,
     ComponentLandingSharedCta,
 ],
