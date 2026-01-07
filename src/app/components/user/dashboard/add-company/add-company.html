@@ -1,34 +1,41 @@
 <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
 
-  <div
-    class="w-full flex flex-col gap-y-5 bg-white border border-gray-200 shadow-2xs rounded-2xl pointer-events-auto px-5 py-5 pb-10">
+  <form
+    class="w-full flex flex-col gap-y-5 bg-gray-100 border border-gray-200 shadow-2xs rounded-2xl pointer-events-auto px-5 py-5 ">
 
-    <div class="flex flex-col gap-y-3 w-full">
+    <!-- Header -->
+    <div class="flex justify-between gap-x-5 w-full">
+      <!-- Title -->
+      <div class="w-full">
+        <h2 class="text-xl text-balance font-medium">
+          <span>
+            <lucide-icon [name]="Building2" class="size-5 inline-block mr-1 text-primary" />
+          </span>
+          Crear empresa
+        </h2>
+        <p class="text-sm text-balance text-gray-800">Registrar datos de tu nueva empresa.</p>
+      </div>
+
       <!-- Button Close -->
-      <button class="ml-auto"
+      <button class="ml-auto h-fit"
         data-hs-overlay="#add-company-modal" aria-controls="add-company-modal" aria-haspopup="dialog" aria-expanded="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-x-icon lucide-x">
+          class="lucide lucide-x-icon lucide-x size-5">
           <path d="M18 6 6 18" />
           <path d="m6 6 12 12" />
         </svg>
       </button>
-
-      <!-- Title -->
-      <div class="text-center w-full space-y-1 sm:px-5">
-        <h2 class="text-3xl text-balance font-bold">Crear empresa</h2>
-        <p class="text-sm text-balance text-gray-800">Registrar datos de tu nueva empresa.</p>
-      </div>
     </div>
 
     <!-- Form -->
-    <form class="py-5 sm:px-5 grid gap-5">
+    <div class="p-5 rounded-xl border border-gray-300 w-full bg-white grid gap-5">
 
       <!-- Name -->
-      <div class="space-y-2 col-span-2">
-        <label for="name" class="block text-sm font-medium">
-          Nombre de la empresa
+      <div class="space-y-1 col-span-2">
+        <label for="name" class="block text-xs font-medium">
+          Nombre
+          <span class="text-red-600">*</span>
         </label>
         <input
           id="name" name="name"
@@ -36,46 +43,53 @@
           maxlength="100"
           type="text"
           placeholder="Ingrese el nombre de la empresa"
-          class="border rounded-full border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+          class="border rounded-lg border-gray-300  text-sm w-full py-3 px-4 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
         >
-        <!-- <div *ngIf="companyForm.get('name')?.touched && companyForm.get('name')?.invalid" class="text-red-600 text-xs">
-          <div *ngIf="companyForm.get('name')?.errors?.['required']">El nombre es obligatorio.</div>
-          <div *ngIf="companyForm.get('name')?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
-          <div *ngIf="companyForm.get('name')?.errors?.['maxlength']">El nombre no debe exceder los 100 caracteres.</div>
-        </div> -->
       </div>
 
       <!-- Tag -->
-      <div class="space-y-2 col-span-2">
-        <label for="tag" class="block text-sm font-medium">
+      <div class="space-y-1 col-span-2">
+        <label for="tag" class="block text-xs font-medium">
           Tag
+          <span class="text-red-600">*</span>
         </label>
         <input
-          id="tag"
-          name="tag"
+          id="tag" name="tag"
           formControlName="tag"
           maxlength="100"
           type="text"
-          placeholder="Ej: Tecnología o Marketing"
-          class="border rounded-full border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+          placeholder="Ej: Tecnología, Barbería, Farmacia, Cafetería"
+          class="border rounded-lg border-gray-300 text-sm w-full py-3 px-4 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
         >
-        <!-- <div *ngIf="companyForm.get('tag')?.touched && companyForm.get('tag')?.invalid" class="text-red-600 text-xs">
-          <div *ngIf="companyForm.get('tag')?.errors?.['required']">El tag es obligatorio.</div>
-          <div *ngIf="companyForm.get('tag')?.errors?.['minlength']">El tag debe tener al menos 3 caracteres.</div>
-          <div *ngIf="companyForm.get('tag')?.errors?.['maxlength']">El tag no debe exceder los 20 caracteres.</div>
-        </div> -->
+      </div>
+
+      <!-- Description -->
+      <div class="space-y-1 col-span-2">
+        <label for="description" class="block text-xs font-medium">
+          Descripción
+        </label>
+        <textarea
+          id="description"
+          name="description"
+          formControlName="description"
+          maxlength="255"
+          rows="3"
+          placeholder="Ingrese la descripción de la empresa"
+          class="border rounded-lg border-gray-300 text-sm w-full py-3 px-4 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+        ></textarea>
       </div>
 
       <!-- Country -->
-      <div class="space-y-2">
-        <label for="country" class="block text-sm font-medium">
+      <div class="space-y-1 -mt-1">
+        <label for="country" class="block text-xs font-medium">
           País
+          <span class="text-red-600">*</span>
         </label>
         <select
+          id="country"
           name="country"
           formControlName="country"
-          class="border rounded-full border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-        >
+          class="border rounded-lg border-gray-300 text-sm w-full py-3 px-4 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary resize-none">
           <option value="Peru">Perú</option>
           <option value="Colombia">Colombia</option>
           <option value="Bolivia">Bolivia</option>
@@ -83,30 +97,39 @@
       </div>
 
       <!-- Currency -->
-      <div class="space-y-2">
-        <label for="country" class="block text-sm font-medium">
+      <div class="space-y-1 -mt-1">
+        <label for="currency" class="block text-xs font-medium">
           Moneda
+          <span class="text-red-600">*</span>
         </label>
         <select
+          id="currency"
           name="currency"
           formControlName="currency"
-          class="border rounded-full border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-        >
-          <option value="PEN">PEN (S/.)</option>
-          <option value="USD">USD ($)</option>
-          <option value="EUR">EUR (€)</option>
+          class="border rounded-lg border-gray-300 text-sm w-full py-3 px-4 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary resize-none">
+          <option value="PEN">PEN</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
         </select>
       </div>
 
-      <!-- Submit Button -->
-      <button type="button"
-        class="w-full btn-primary-sm tracking-wide !py-3 !font-medium col-span-2">
-        Registrar
+    </div>
+
+    <!-- Actions -->
+    <div class="flex gap-x-3 w-full">
+      <button
+        class="w-full px-4 py-2.5 text-sm rounded-lg bg-white border border-gray-300 text-gray-800 font-medium hover:border-primary hover:text-black hover:shadow"
+        data-hs-overlay="#add-company-modal" aria-controls="add-company-modal" aria-haspopup="dialog" aria-expanded="true"
+        type="reset">
+        Cancelar
       </button>
-    </form>
+      <button
+        class="w-full px-4 py-2.5 text-sm rounded-lg bg-primary text-white font-medium hover:bg-primary-dark"
+        type="submit">
+        Crear empresa
+      </button>
+    </div>
 
-
-
-  </div>
+  </form>
 </div>
 
