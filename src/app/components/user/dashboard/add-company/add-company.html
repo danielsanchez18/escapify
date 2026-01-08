@@ -1,7 +1,7 @@
 <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-xl sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
 
   <form
-    class="w-full flex flex-col gap-y-5 bg-white md:bg-gray-100 md:border border-gray-200 shadow-2xs rounded-2xl pointer-events-auto p-5 max-md:px-7">
+    class="w-full flex flex-col gap-y-7 bg-white shadow-2xs rounded-2xl pointer-events-auto p-7">
 
     <!-- Header -->
     <div class="flex justify-between gap-x-5 w-full">
@@ -18,6 +18,7 @@
 
       <!-- Button Close -->
       <button class="ml-auto h-fit"
+        type="reset"
         data-hs-overlay="#add-company-modal" aria-controls="add-company-modal" aria-haspopup="dialog" aria-expanded="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -29,11 +30,11 @@
     </div>
 
     <!-- Form -->
-    <div class="max-md:pt-2 md:p-5 rounded-xl md:border border-gray-300 w-full bg-white grid grid-cols-2 gap-y-5 gap-x-3">
+    <div class="w-full bg-white grid grid-cols-2 gap-y-5 gap-x-3">
 
       <!-- Name -->
       <div class="space-y-1 col-span-2">
-        <label for="name" class="block text-sm sm:text-xs font-medium">
+        <label for="name" class="block text-sm font-medium">
           Nombre
           <span class="text-red-600">*</span>
         </label>
@@ -49,7 +50,7 @@
 
       <!-- Tag -->
       <div class="space-y-1 col-span-2">
-        <label for="tag" class="block text-sm sm:text-xs font-medium">
+        <label for="tag" class="block text-sm font-medium">
           Tag
           <span class="text-red-600">*</span>
         </label>
@@ -65,7 +66,7 @@
 
       <!-- Description -->
       <div class="space-y-1 col-span-2">
-        <label for="description" class="block text-sm sm:text-xs font-medium">
+        <label for="description" class="block text-sm font-medium">
           Descripción
         </label>
         <textarea
@@ -80,8 +81,8 @@
       </div>
 
       <!-- Country -->
-      <div class="space-y-1 -mt-1 w-full">
-        <label for="country" class="block text-sm sm:text-xs font-medium">
+      <div class="space-y-1">
+        <label for="country" class="-mt-1 block text-sm font-medium">
           País
           <span class="text-red-600">*</span>
         </label>
@@ -97,8 +98,8 @@
       </div>
 
       <!-- Currency -->
-      <div class="space-y-1 -mt-1 w-full">
-        <label for="currency" class="block text-sm sm:text-xs font-medium">
+      <div class="space-y-1">
+        <label for="currency" class="-mt-1 block text-sm font-medium">
           Moneda
           <span class="text-red-600">*</span>
         </label>
@@ -116,17 +117,17 @@
     </div>
 
     <!-- Actions -->
-    <div class="flex gap-x-3 w-full max-md:pb-2">
+    <div class="flex gap-x-3 w-full">
       <button
-        class="w-full px-4 py-2.5 text-sm rounded-lg bg-white border border-gray-300 text-gray-800 font-medium hover:border-primary hover:text-black hover:shadow"
+        class="w-full px-4 py-2.5 text-sm rounded-lg bg-white border border-gray-300 font-medium hover:border-primary text-gray-800 hover:text-black hover:shadow max-md:hidden"
         data-hs-overlay="#add-company-modal" aria-controls="add-company-modal" aria-haspopup="dialog" aria-expanded="true"
         type="reset">
         Cancelar
       </button>
       <button
-        class="w-full px-4 py-2.5 text-sm rounded-lg bg-primary text-white font-medium hover:bg-primary-dark"
+        class="w-full px-4 py-2.5 text-sm rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark"
         type="submit">
-        Crear empresa
+        Crear Empresa
       </button>
     </div>
 
