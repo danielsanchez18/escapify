@@ -1,13 +1,19 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ComponentUserDashboardAddCompany } from '@components/user/dashboard/add-company/add-company';
-import { ComponentUserDashboardCompaniesList } from "@components/user/dashboard/companies-list/companies-list";
+import { ComponentUserDashboardCompanies } from '@components/user/dashboard/companies/companies';
+import { ComponentUserDashboardInvitations } from '@components/user/dashboard/invitations/invitations';
 
 @Component({
   selector: 'page-user-dashboard',
   imports: [
-    ComponentUserDashboardCompaniesList,
-    ComponentUserDashboardAddCompany
+    CommonModule,
+    ComponentUserDashboardInvitations,
+    ComponentUserDashboardCompanies,
   ],
   templateUrl: './dashboard.html',
 })
-export class PageUserDashboard { }
+export class PageUserDashboard {
+
+  activeTab: 'invitations' | 'companies' = 'companies';
+
+}

@@ -1,5 +1,5 @@
 
-<section class="space-y-10">
+<section class="flex flex-col gap-y-10">
 
   <!-- Great -->
   <div>
@@ -7,15 +7,26 @@
     <p class="text-sm line-clamp-1 text-gray-800">Gestiona tu cuenta, ver tu actividad y acceder a funciones personalizadas.</p>
   </div>
 
-  <!-- Companies List -->
-  <component-user-dashboard-companies-list />
-
-  <!-- Add Company Modal -->
-  <div id="add-company-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none"
-    role="dialog" tabindex="-1" aria-labelledby="add-company-modal-label">
-    <component-user-dashboard-add-company />
+  <div class="flex items-center gap-x-2">
+    <button
+      class=""
+      (click)="activeTab = 'companies'"
+      ngClass="{{ activeTab === 'companies' ? 'btn-primary-sm rounded-lg!' : 'btn-secondary-sm rounded-lg!' }}">
+      Empresas
+    </button>
+    <button
+      class=""
+      (click)="activeTab = 'invitations'"
+      ngClass="{{ activeTab === 'invitations' ? 'btn-primary-sm rounded-lg!' : 'btn-secondary-sm rounded-lg!' }}">
+      Invitaciones
+    </button>
   </div>
 
+  <!-- Companies -->
+  <component-user-dashboard-companies *ngIf="activeTab === 'companies'" />
+
+  <!-- Invitations -->
+  <component-user-dashboard-invitations *ngIf="activeTab === 'invitations'" />
 
 </section>
 
