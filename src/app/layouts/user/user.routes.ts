@@ -10,6 +10,10 @@ export const USER_ROUTES: Routes = [
         path: 'dashboard',
         loadComponent: () => import('@pages/user/dashboard/dashboard').then(m => m.PageUserDashboard)
       },
+      {
+        path: 'nuevo',
+        loadComponent: () => import('@pages/user/new/new').then(m => m.PageUserNew)
+      },
     ]
   }
 ];
