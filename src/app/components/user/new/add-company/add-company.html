@@ -1,7 +1,7 @@
 <form action=""
-  class="grid lg:grid-cols-2 gap-x-6 gap-y-4">
+  class="grid gap-x-6 gap-y-4">
 
-  <div class="col-span-2 w-fit mx-auto" data-hs-file-upload='{
+  <div class="w-fit mx-auto" data-hs-file-upload='{
     "url": "/upload",
     "acceptedFiles": "image/*",
     "maxFiles": 1,
@@ -16,22 +16,14 @@
     <div class="flex flex-wrap items-center gap-3 sm:gap-5">
       <div class="group" data-hs-file-upload-previews="" data-hs-file-upload-pseudo-trigger="">
         <span class="group-has-[div]:hidden flex shrink-0 justify-center items-center size-20 border-2 border-dotted border-gray-300 text-gray-400 cursor-pointer rounded-full hover:bg-gray-50">
-          <svg class="shrink-0 size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="10" r="3"></circle>
-            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
-          </svg>
+          <lucide-icon [name]="Image" class="size-7 shrink-0 stroke-[1.5]" />
         </span>
       </div>
 
       <div class="grow">
         <div class="flex items-center gap-x-2">
           <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-transparent bg-primary text-white hover:bg-primary-dark focus:outline-hidden focus:bg-primary-dark disabled:opacity-50 disabled:pointer-events-none" data-hs-file-upload-trigger="">
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" x2="12" y1="3" y2="15"></line>
-            </svg>
+            <lucide-icon [name]="Upload" class="size-4 shrink-0" />
             Subir logo
           </button>
           <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-gray-300 bg-white text-gray-700 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-file-upload-clear="">Borrar</button>
@@ -62,20 +54,23 @@
   </div>
 
   <!-- Tag -->
-  <div class="space-y-2 ">
+  <div class="space-y-2">
     <label for="tag" class="block text-sm font-medium">
       Tag
       <span class="text-red-600">*</span>
     </label>
-    <input
-      id="tag"
-      name="tag"
-      formControlName="tag"
-      maxlength="100"
-      type="text"
-      placeholder="Ej: Tecnología o Marketing"
-      class="border rounded-lg border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
-    >
+    <div class="relative">
+      <input
+        id="tag"
+        name="tag"
+        formControlName="tag"
+        maxlength="100"
+        type="text"
+        placeholder="Ej: Tecnología o Marketing"
+        class="border rounded-lg border-gray-300 placeholder:text-gray-700 text-sm w-full pl-12 pr-5 py-3 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary"
+      >
+      <lucide-icon [name]="Tag" class="size-4 shrink-0 absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-700" />
+    </div>
     <!-- <div *ngIf="companyForm.get('tag')?.touched && companyForm.get('tag')?.invalid" class="text-red-600 text-xs">
       <div *ngIf="companyForm.get('tag')?.errors?.['required']">El tag es obligatorio.</div>
       <div *ngIf="companyForm.get('tag')?.errors?.['minlength']">El tag debe tener al menos 3 caracteres.</div>
@@ -84,7 +79,7 @@
   </div>
 
   <!-- Description -->
-  <div class="space-y-2 col-span-2">
+  <div class="space-y-2">
     <label for="description" class="block text-sm font-medium">
       Descripción
     </label>
@@ -99,43 +94,9 @@
     ></textarea>
   </div>
 
-  <!-- Country -->
-  <div class="space-y-2">
-    <label for="country" class="block text-sm font-medium">
-      País
-      <span class="text-red-600">*</span>
-    </label>
-    <select
-      name="country"
-      formControlName="country"
-      class="border rounded-lg border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-    >
-      <option value="Peru">Perú</option>
-      <option value="Colombia">Colombia</option>
-      <option value="Bolivia">Bolivia</option>
-    </select>
-  </div>
-
-  <!-- Currency -->
-  <div class="space-y-2">
-    <label for="country" class="block text-sm font-medium">
-      Moneda
-      <span class="text-red-600">*</span>
-    </label>
-    <select
-      name="currency"
-      formControlName="currency"
-      class="border rounded-lg border-gray-300 placeholder:text-gray-700 text-sm w-full py-3 px-5 hover:shadow focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-    >
-      <option value="PEN">PEN (S/.)</option>
-      <option value="USD">USD ($)</option>
-      <option value="EUR">EUR (€)</option>
-    </select>
-  </div>
-
   <!-- Submit Button -->
   <button type="button"
-    class="btn-primary sm:text-primary-sm w-full rounded-lg! !font-medium max-sm:!py-3 !py-2.5 col-span-2">
-    Siguiente ->
+    class="btn-primary sm:text-primary-sm w-full rounded-lg! !font-medium max-sm:!py-3 !py-2.5">
+    Crear Empresa
   </button>
 </form>

@@ -23,6 +23,10 @@ export const routes: Routes = [
     loadChildren: () => import('./layouts/user/user.routes').then(m => m.USER_ROUTES),
   },
   {
+    path: 'empresa',
+    loadChildren: () => import('./layouts/company/company.routes').then(m => m.COMPANY_ROUTES),
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
