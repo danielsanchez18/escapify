@@ -1,14 +1,55 @@
-<div class="min-h-[100dvh] grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] gap-y-10 bg-gray-300">
+<div class="flex flex-col h-[100dvh]">
 
-
-  <component-company-shared-sidebar />
-
-  <div class="w-full max-w-[95rem] mx-auto bg-red-200">
-    <component-company-shared-navbar />
-
-    <div class="flex-1">
-      <router-outlet />
-    </div>
+  <div class="border-b border-gray-200">
+    <!-- Header -->
+    <component-company-shared-header />
   </div>
+
+  <div class="border-b border-gray-200">
+
+    <!-- Módulos -->
+    <section class="flex items-center gap-x-3 w-full max-w-[90rem] px-5 sm:px-7 lg:px-10 mx-auto">
+
+      <div class="max-md:hidden overflow-x-auto scrollbar-hide">
+        <component-company-shared-navlink />
+      </div>
+
+      <!-- Menu Responsive -->
+      <div id="sidebar" class="hs-overlay [--auto-close:lg] lg:hidden w-80
+        hs-overlay-open:translate-x-0
+        -translate-x-full transition-all duration-200 transform
+        fixed top-0 start-0 bottom-0 z-60" role="dialog" tabindex="-1" aria-label="Sidebar" >
+        <component-company-shared-navlink />
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="md:hidden flex items-center gap-x-3 py-2">
+
+        <!-- Boton Menu Responsive -->
+        <button type="button"
+          class="p-1 rounded-md bg-white hover:bg-gray-100 border border-gray-300"
+          aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+          data-hs-overlay="#sidebar"
+        >
+          <lucide-icon [name]="Menu" class="size-5 stroke-[1.5]" />
+        </button>
+
+        <a routerLink="/dashboard" class="text-sm underline-offset-4 hover:underline">
+          Dashboard
+        </a>
+
+        <lucide-icon [name]="ChevronRight" class="size-4 text-gray-500" />
+
+        <p class="font-medium text-sm">Overview</p>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Contenido -->
+  <main class="flex-1 w-full max-w-[90rem] mx-auto py-7 lg:py-10">
+    <router-outlet />
+  </main>
 
 </div>
