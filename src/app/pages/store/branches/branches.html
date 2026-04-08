@@ -1,0 +1,26 @@
+<main class="py-10 flex flex-col gap-7">
+
+  <!-- Título -->
+  <div class="flex items-center gap-4">
+    <div>
+      <h3 class="text-lg font-medium">Sucursales</h3>
+      <p class="text-gray-700 text-xs">Gestiona las sucursales de tu tienda y su información.</p>
+    </div>
+
+    <button
+      class="btn-primary text-xs ml-auto"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-branch-modal" data-hs-overlay="#hs-add-branch-modal"
+    >
+      Agregar
+    </button>
+  </div>
+
+  <component-store-branches-stats />
+  <component-store-branches-list />
+  <!-- <component-store-branches-empty /> -->
+
+  <div id="hs-add-branch-modal" class="hs-overlay [--overlay-backdrop:static] hs-overlay-backdrop-open:backdrop-blur-xs hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-add-branch-modal-label">
+    <component-store-branches-add />
+  </div>
+
+</main>

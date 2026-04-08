@@ -1,11 +1,15 @@
-<div class="min-h-[100dvh] grid grid-rows-[auto_1fr] gap-y-10 px-5 lg:px-10">
+<div class="min-h-dvh flex">
 
-  <div class="w-full max-w-[85rem] mx-auto">
-    <component-user-shared-navbar />
+  <div class="hidden lg:block">
+    <component-user-shared-sidebard />
   </div>
 
-  <div class="w-full max-w-[85rem] mx-auto flex-1">
-    <router-outlet />
+  <div class="w-full flex flex-col">
+    <component-user-shared-navbar />
+
+    <div class="flex-1 py-10 px-5 lg:px-10 overflow-y-auto">
+      <router-outlet />
+    </div>
   </div>
 
 </div>

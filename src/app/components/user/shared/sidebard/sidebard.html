@@ -1,0 +1,65 @@
+<nav class="flex flex-col bg-white border-r border-gray-200 w-64 h-full px-5 py-5">
+
+  <!-- Logo -->
+  <a href="/dashboard" class="ml-6 h-6.5 block">
+    <img src="/logos/logo2.png" alt="Escapify Logo" class="h-full" />
+  </a>
+
+  <!-- Links -->
+  <div class="flex flex-col mt-10 gap-y-1 text-gray-800">
+
+    <a
+      routerLink="/cuenta"
+      routerLinkActive="border-l-primary text-primary-dark hover:text-primary-dark"
+      [routerLinkActiveOptions]="{exact: true}"
+      class="flex items-center gap-x-2 border-l-2 border-transparent text-sm py-2 px-5 hover:bg-gray-100 hover:text-black transition-colors">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-circle-user-round-icon lucide-circle-user-round size-5">
+        <path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
+        <circle cx="12" cy="11" r="4" />
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+      General
+
+    </a>
+
+    <a
+      routerLink="/cuenta/tiendas"
+      routerLinkActive="border-l-primary text-primary-dark pointer-events-none"
+      class="flex items-center gap-x-2 border-l-2 border-transparent text-sm py-2 px-5 hover:bg-gray-100 transition-colors">
+
+      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 10.987v4.506c0 2.833 0 4.249.879 5.129c.878.88 2.293.88 5.121.88h6c2.828 0 4.243 0 5.121-.88c.88-.88.88-2.296.88-5.129v-4.506" />
+          <path stroke-linecap="round" d="M7 17.974h4" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.796 2.5L6.15 2.53c-1.738-.09-2.184 1.249-2.184 1.903c0 .585-.075 1.438-1.14 3.042c-1.066 1.603-.986 2.08-.385 3.19c.498.92 1.766 1.28 2.428 1.341c2.1.048 3.122-1.766 3.122-3.041c1.042 3.203 4.005 3.203 5.325 2.837c1.323-.367 2.456-1.68 2.723-2.837c.156 1.437.63 2.276 2.027 2.852c1.449.597 2.694-.315 3.319-.9s1.026-1.883-.088-3.31c-.768-.984-1.088-1.912-1.194-2.872c-.06-.557-.114-1.155-.506-1.536c-.572-.556-1.393-.725-1.801-.699" />
+        </g>
+      </svg>
+      Tiendas
+
+    </a>
+
+    <a
+      routerLink="/cuenta/seguridad"
+      routerLinkActive="border-l-primary text-primary-dark pointer-events-none"
+      class="flex items-center gap-x-2 border-l-2 border-transparent text-sm py-2 px-5 hover:bg-gray-100 transition-colors">
+
+      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <g class="lock-outline">
+          <g fill="currentColor" fill-rule="evenodd" class="Vector" clip-rule="evenodd">
+            <path d="M6.143 7.429h11.714A4.143 4.143 0 0 1 22 11.57v5.715a4.143 4.143 0 0 1-4.143 4.143H6.143A4.143 4.143 0 0 1 2 17.286V11.57a4.143 4.143 0 0 1 4.143-4.14Zm0 2A2.14 2.14 0 0 0 4 11.57v5.715c0 1.183.96 2.143 2.143 2.143h11.714c1.184 0 2.143-.96 2.143-2.143V11.57c0-1.183-.96-2.142-2.143-2.142z" />
+            <path d="M8.13 2.543C9.139 2.088 10.22 2 11.163 2h1c.737 0 1.53.067 2.311.31c.778.241 1.529.584 2.001 1.345c.438.706.525 1.603.525 2.618V9h-2V6.273c0-.993-.109-1.378-.224-1.563c-.08-.13-.241-.287-.895-.49c-.52-.162-1.094-.22-1.718-.22h-1c-.846 0-1.588.086-2.21.366c-.375.17-.565.33-.689.531C8.131 5.115 8 5.506 8 6.273V9H6V6.273c0-.97.161-1.771.559-2.42c.408-.666.988-1.047 1.571-1.31m3.834 10.1a1 1 0 0 1 1 1v1.214a1 1 0 1 1-2 0v-1.214a1 1 0 0 1 1-1" />
+          </g>
+        </g>
+      </svg>
+      Seguridad
+
+    </a>
+
+
+
+  </div>
+
+</nav>

@@ -7,13 +7,17 @@ export const USER_ROUTES: Routes = [
     component: LayoutUser,
     children: [
       {
-        path: 'dashboard',
-        loadComponent: () => import('@pages/user/dashboard/dashboard').then(m => m.PageUserDashboard)
+        path: '',
+        loadComponent: () => import('@pages/user/general/general').then(m => m.PageUserGeneral)
       },
       {
-        path: 'nuevo',
-        loadComponent: () => import('@pages/user/new/new').then(m => m.PageUserNew)
+        path: 'tiendas',
+        loadComponent: () => import('@pages/user/stores/stores').then(m => m.PageUserStores)
       },
+      {
+        path: 'seguridad',
+        loadComponent: () => import('@pages/user/security/security').then(m => m.PageUserSecurity)
+      }
     ]
   }
 ];

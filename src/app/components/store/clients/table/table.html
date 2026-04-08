@@ -1,0 +1,65 @@
+<section class="flex flex-col gap-y-7">
+
+  <!-- Buscar, filtros, exportar -->
+  <div class="flex items-center gap-x-2">
+
+    <!-- Buscar -->
+    <div class="relative w-full md:max-w-sm">
+      <lucide-icon [name]="Search" class="size-4 absolute left-1.5 top-1/2 -translate-y-1/2 text-gray-400" />
+      <input
+        type="text"
+        placeholder="Buscar cliente..."
+        class="w-full border pl-9 border-gray-300 rounded-lg text-sm py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" />
+    </div>
+
+    <!-- Filtros -->
+    <button type="button"
+      class="ml-auto hover:bg-gray-50 font-medium text-xs flex items-center p-2 gap-x-2 h-full rounded-md border border-gray-300">
+      <lucide-icon [img]="SlidersHorizontal" class="size-4 stroke-[1.5]" />
+      <p class="hidden md:block">Filtros (2)</p>
+    </button>
+
+    <!-- Importar / Exportar -->
+    <button type="button"
+      class="hover:bg-gray-50 font-medium text-xs flex items-center p-2 gap-x-2 h-full rounded-md border border-gray-300">
+      <lucide-icon [img]="ArrowUpDown" class="size-4 stroke-[1.5]" />
+      <p class="hidden md:block">Importar / Exportar</p>
+      <lucide-icon [img]="ChevronDown" class="size-4 stroke-[1.5] hidden md:block" />
+    </button>
+
+  </div>
+
+  <!-- Listado de clientes -->
+  <component-store-clients-list />
+
+  <!-- Paginación -->
+  <div class="flex items-center gap-x-3">
+    <button type="button"
+      class="hover:bg-gray-50 font-medium text-xs flex items-center p-2 gap-x-2 h-full rounded-md border border-gray-300">
+      <lucide-icon [img]="ChevronLeft" class="size-4 stroke-[1.5]" />
+      <p class="hidden md:block">Anterior</p>
+    </button>
+
+    <div class="flex items-center gap-x-1">
+      <button type="button"
+        class="bg-primary text-white font-medium text-sm flex items-center w-8 py-1.5 justify-center gap-x-2 h-full rounded-md border border-primary">
+        1
+      </button>
+      <button type="button"
+        class="hover:bg-gray-50 font-medium text-sm flex items-center w-8 py-1.5 justify-center gap-x-2 h-full rounded-md border border-gray-300">
+        2
+      </button>
+      <button type="button"
+        class="hover:bg-gray-50 font-medium text-sm flex items-center w-8 py-1.5 justify-center gap-x-2 h-full rounded-md border border-gray-300">
+        3
+      </button>
+    </div>
+
+    <button type="button"
+      class="hover:bg-gray-50 font-medium text-xs flex items-center p-2 gap-x-2 h-full rounded-md border border-gray-300">
+      <p class="hidden md:block">Siguiente</p>
+      <lucide-icon [img]="ChevronRight" class="size-4 stroke-[1.5]" />
+    </button>
+  </div>
+
+</section>

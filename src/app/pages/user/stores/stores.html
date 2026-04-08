@@ -1,0 +1,20 @@
+<main class="flex flex-col h-full gap-y-10">
+
+  <section class="flex items-center gap-x-5">
+    <div>
+      <h1 class="text-xl font-medium">Tus Tiendas</h1>
+      <p class="text-sm text-gray-600 line-clamp-1">Gestiona tus tiendas y asociaciones</p>
+    </div>
+
+    <a href="/tienda/crear" class="ml-auto btn-primary-sm text-nowrap">
+      Crear <span class="max-sm:hidden">tienda</span>
+    </a>
+  </section>
+
+  <div class="flex-1">
+    <!-- <component-user-stores-empty /> -->
+    <component-user-stores-list />
+  </div>
+
+
+</main>
